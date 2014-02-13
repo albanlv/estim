@@ -4,23 +4,23 @@
 .row
   .col-md-10
     #nukomeet.pull-right
-      %p SAS Nukomeet          
+      %p SAS Nukomeet
       %p 750 621 518 RCS Paris
       %p 17 rue de Javel
       %p  75015 Paris France
-      
+
 %h1 Quote
 %hr
 .row
   .col-md-2
   .col-md-8
-    %h2 #{@project_name} for #{@client_name} 
+    %h2 #{@project_name} for #{@client_name}
     %hr
     %h3 About
     %p Nukomeet is a team of pluridisciplinary individuals that like to solve complex problems using technology, with a strong expertise on web and mobile and a taste for open-source and social innovation.
-    %ul 
+    %ul
       %li
-        %a{:href => "http://github.com/nukomeet"} Our open source projects  
+        %a{:href => "http://github.com/nukomeet"} Our open source projects
       %li
         %a{:href => "http://nukomeet.com/team"} The Team
       %li
@@ -33,24 +33,24 @@
         %li *  Partial remake of Navigart software, used by the public contemporary art collections network (Centre Georges Pompidou, MacVal...etc). Enables online visioning and search of works of art. Still in progress, Nukomeet works on improving the API interacting with all the works of art and the realisation of an elegant and responsive front end, including multi criteria search in real time (Angular JS). For Videomuseum.
         %li * Creation of a dashboard for Polyspot (Big Data).
         %li * Process automation for Freyssinet (subsidiary of Vinci, construction), Ruby on Rails.
-        %li * Visually immersive application for Arte and the Chateau de Versailles: http://lenotre.chateauversailles.fr  
+        %li * Visually immersive application for Arte and the Chateau de Versailles: http://lenotre.chateauversailles.fr
 
     %hr
 
     %h3 Context and description of the mission
-    .well 
+    .well
       #{@mission}
     %hr
-    %h3 Detailed estimate 
+    %h3 Detailed estimate
     %table.table.table-bordered
       %thead
         %tr
           %th Item
-          %th Description 
-          %th Estimation 
+          %th Description
+          %th Estimation
       %tbody
         - @stories.each do |story|
-          - if params[:"#{story[:name]}"] == "yes" 
+          - if params[:"#{story[:name]}"] == "yes"
             %tr
               %td
                 = story[:name]
@@ -60,49 +60,67 @@
                 = story[:days]
         %tr
           %td
-            %strong Total 
+            %strong Total
           %td
-            %strong Total number of days estimated 
-          %td 
+            %strong Total number of days estimated
+          %td
             - total = 0
             - @stories.each do |story|
-              - if params[:"#{story[:name]}"] == "yes" 
-                - total += story[:days] 
+              - if params[:"#{story[:name]}"] == "yes"
+                - total += story[:days]
             = total
     %hr
-    %h3 Price 
+    %h3 Price
     %p
-      Developments are estimated at 
+      Developments are estimated at
       = total
       days with a rate of #{@rate} euro per day.
-    %p 
+    %p
       Price :
       %br
       %strong
         = total*@rate.to_i
-        euros without taxes 
+        euros without taxes
       %br
-      VAT 19.6% 
+      VAT 19.6%
       %br
       = 1.196*total*@rate.to_i
-      euros with taxes 
+      euros with taxes
     %hr
     %h3 Planning
     %p
-      We commit to deliver the project under 
+      We commit to deliver the project under
       = total
       working days (
       = total/5
-      weeks) starting from the first day of development. 
-    %p This commitment is valid only if the client delivers all the necessary matieral for the project on time (mockups, images, texts, credentials...) and answers without excessive delay to the questions of the team.  
+      weeks) starting from the first day of development.
+    %p This commitment is valid only if the client delivers all the necessary matieral for the project on time (mockups, images, texts, credentials...) and answers without excessive delay to the questions of the team.
     %p A dedicated chat room will be open where the client will be able to follow closely the project. Every 10 days a status meeting can be organised with the client.
     %hr
-    %h3 Browser 
-    %p Except if specifically mentioned by the client, obsolete browsers won’t be supported. The software provided will be compatible with the latest version only of Safari, IE, Chrome and Firefox.  
+    %h3 Browser
+    %p Except if specifically mentioned by the client, obsolete browsers won’t be supported. The software provided will be compatible with the latest version only of Safari, IE, Chrome and Firefox.
+    %hr
+    %h3 Communication
+    %p We privilege email over phone calls/text message/chat. We like to keep track of your instructions and it is easier if they are written and easily findable.
+    %p Our phones are generally switched off or in silent mode. It helps us concentrate and deliver better products to you. If you need to have a conversation, ask for it by email or text message and we will call you back within the hour.
+    %p Let’s separate conversation and messages. A message is useful for something precise you have to say to us and a conversation is useful for something that we have to settle together. Messages should be sent by mail, conversations should happen through phone call or meetings.
+    %p As a principle, we like to keep our communication short and sharp. Our messages might appear as rude, please don’t be offended :)
+    %p If you’d like so, we can schedule regular reports and/or meetings for a project, please ask for it before starting the project.
+    %hr
+    %h3 Schedule
+    %p The project cannot start before we receive all the necessary information (logins, urls, texts, psd, specs...).
+    %p Please be proactive : provide information before we ask for it.
+    %p No project should start before we receive a third advance on payment.
+    %p Software programming is not an 100% predictable environment. There are unpredicted events and problems. If we have to postpone something, it is because we ran through an unpredicted issue, and you will be the first to know and to know why.
+    %p Despite this unpredictability, we make estimates of time and we commit to them. You will be compensated if we are late.
+    %p This commitment do not apply if the specs change after starting the project and/or if you do not deliver all documents (psd, texts...etc) on time.
+    %hr
+    %h3 Confidentiality
+    %p We work in an open and transparent mode : we tell what we do and for whom, it helps us build a reputation and trigger larger collaboration with other developers.
+    %p However you can rely on us to protect all the information that is vital for your business.
+    %p Please specify in advance if there are specific elements that should not be disclosed.
+    %p We strongly believe that open source is a more efficient way to work for everybody. We strongly appreciate if you propose to release some pieces we code for you.
     %hr
     %h3 Payments
-    %p The payment is in three parts:
-    %p A 30% account before development start
-    %p A first payment of 30% halfway of development.
-    %p A last payment settling the amount at final delivery.
-
+    %p 33% at the beginning of a project, 33% at the middle, and 33% at the end.
+    %p Please preferably use bank transfers.
