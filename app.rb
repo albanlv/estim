@@ -9,7 +9,7 @@ class SinatraBootstrap < Sinatra::Base
 	      {:name => "slicing", :desc => "Conversion of mockups to HTML/CSS", :days  => 3},
               {:name =>	"integration", :desc =>"Integration of HTML/CSS templates in the application", :days =>3},
               {:name =>	"registration", :desc =>"User can register", :days =>2},
-              {:name =>	"facebook", :desc =>"User can login usring Facebook Connect", :days => 2},
+              {:name =>	"facebook", :desc =>"User can login using Facebook Connect", :days => 2},
               {:name =>	"twitter", :desc =>"User can login using Twitter", :days => 2},
               {:name =>	"linkedin", :desc =>"User can login using Linkedin ", :days =>2},
               {:name =>	"user", :desc =>"Admin can manage users  ", :days =>  2},
